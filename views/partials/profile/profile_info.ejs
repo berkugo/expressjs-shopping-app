@@ -1,0 +1,98 @@
+<form action="/profile/update" method="GET" class="col s12 m4 l4 z-depth-1"
+    style="border-style: solid; border-color: green; border-width: 1px; border-radius: 1px; padding: 20px; margin-top: 9px;">
+    <div class="row">
+        <div class="input-field col s12">
+            <input disabled value="<%=email%>" id="disabled" type="text" class="validate">
+            <label for="disabled"><%= session.siteText[session.siteLang].profileInfo.mail %></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12 m6 l6">
+            <input value="<%=userInfo.clientname%>" id="first_name" type="text" name="name" class="validate">
+            <label for="first_name"><%= session.siteText[session.siteLang].profileInfo.name %></label>
+        </div>
+        <div class="input-field col s12 m6 l6">
+            <input value="<%=userInfo.clientsurname%>" id="second_name" type="text" name="surname" class="validate">
+            <label for="second_name"><%= session.siteText[session.siteLang].profileInfo.surname %></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input value="<%=userInfo.idnumber%>"
+                placeholder="<%= session.siteText[session.siteLang].profileInfo.idPlaceholder %>" id="idno"
+                name="idnumber" type="text" class="validate">
+            <label for="idno"><%= session.siteText[session.siteLang].profileInfo.idNumber %></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6 m6 l6">
+            <input disabled value="+90" id="disabled" type="text" class="validate">
+            <label for="disabled"><%= session.siteText[session.siteLang].profileInfo.area %></label>
+        </div>
+        <div class="input-field col s6 l6 m6">
+            <input value="<%=userInfo.phonenumber%>"
+                placeholder="<%= session.siteText[session.siteLang].profileInfo.phonePlaceholder %>" id="telno"
+                name="phone" type="text" class="validate">
+            <label for="telno"><%= session.siteText[session.siteLang].profileInfo.phone %></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12 m6 l6">
+            <select id="gender">
+                <option value="1"><%= session.siteText[session.siteLang].profileInfo.male %></option>
+                <option value="2"><%= session.siteText[session.siteLang].profileInfo.female %></option>
+            </select>
+            <label for="gender"><%= session.siteText[session.siteLang].profileInfo.sex %></label>
+        </div>
+        <div class="input-field col s12 m6 l6">
+            <select id="country">
+                <option value="1">Option 1</option>
+            </select>
+            <label for="Country"><%= session.siteText[session.siteLang].profileInfo.country %></label>
+        </div>
+    </div>
+    <button class="waves-effect waves-light btn light-green darken-4 white-text col s12 m12" type="submit">
+        <%= session.siteText[session.siteLang].profileInfo.update %>
+    </button>
+    <%if(validation === false){%>
+    <div class="row">
+        <p class="col s12 m12 l12 left red-text center lostpwd">
+            <%= session.siteText[session.siteLang].profileInfo.phoneFail %>
+        </p>
+        <p class="col s12 m12 l12 left red-text center lostpwd">
+            <%= session.siteText[session.siteLang].profileInfo.nameFail %>
+        </p>
+    </div>
+    <%}%>
+</form>
+
+<div class="col s12 m3 l3">
+    <div class="card white black-text"">
+        <div class=" card-content black-text">
+            <span class="card-title"><%= session.siteText[session.siteLang].profileInfo.removeAcc %></span>
+    <p><%= session.siteText[session.siteLang].profileInfo.removeAccDetail %></p>
+    </div>
+    <div class="card-action">
+        <a class="black-text" href="#"><%= session.siteText[session.siteLang].profileInfo.removeAcc %></a>
+    </div>
+    </div>
+    <div class="card white black-text">
+        <div class="card-content black-text">
+            <span class="card-title"><%= session.siteText[session.siteLang].profileInfo.changePass %></span>
+            <p><%= session.siteText[session.siteLang].profileInfo.changePassDetail %></p>
+        </div>
+        <div class="card-action">
+            <a class="black-text" href="#"><%= session.siteText[session.siteLang].profileInfo.changePass %></a>
+        </div>
+    </div>
+    <div class="card white black-text">
+        <div class="card-content black-text">
+            <span class="card-title"><%= session.siteText[session.siteLang].profileInfo.logout %></span>
+            <p><%= session.siteText[session.siteLang].profileInfo.logoutDetail %></p>
+        </div>
+        <div class="card-action">
+            <a class="black-text" href="/logout"><%= session.siteText[session.siteLang].profileInfo.logout %></a>
+        </div>
+    </div>
+
+</div>

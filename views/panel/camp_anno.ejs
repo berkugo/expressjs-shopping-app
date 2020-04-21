@@ -1,0 +1,97 @@
+<%- include partials/header.ejs %>
+
+<ul class="collapsible">
+    <li>
+        <div class="collapsible-header">
+            <i class="material-icons">add</i>
+            Anasayfa & Kampanya Duyurusu
+        </div>
+        <div class="collapsible-body">
+            <form class="row" action="/panel/editanno" id="editanno" method="POST">
+                <div class="row center">
+                    <h4> Anasayfa kampanya duyurusu</h4>
+
+                    <div class="input-field col s12 m12 l12">
+                        <input placeholder="Örn. ( %50 indirim şansını kaçırma! )" id="first_name" type="text"
+                            class="validate">
+                        <label for="first_name">Başlık</label>
+                    </div>
+                    <div class="input-field col s12 m12 l12">
+                        <input placeholder="Örn. ( Seçili ürünlerde geçerlidir, stoklarla sınırlıdır.  )" id="last_name"
+                            type="text" class="validate">
+                        <label for="last_name">İçerik</label>
+                    </div>
+
+                </div>
+                <div class="row center">
+                    <h4> </h4>
+                    <div class="input-field col s12 m4 l4">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">1.link başlık</label>
+                    </div>
+                    <div class="input-field col s12 m4 l4">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">2.link başlık</label>
+                    </div>
+                    <div class="input-field col s12 m4 l4">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">3.link başlık</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <h4> </h4>
+                    <div class="input-field col s12 m4 l4">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">1.link</label>
+                    </div>
+                    <div class="input-field col s12 m4 l4">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">2.link</label>
+                    </div>
+                    <div class="input-field col s12 m4 l4">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">3.link</label>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </li>
+    <li>
+        <div class="collapsible-header">
+            <i class="material-icons">add</i>
+            Anasayfa afişleri
+        </div>
+        <div class="collapsible-body">
+            <div class="row">
+                <button type="file" class="col s12 m12 l12">Üst ana afiş</button>
+            </div>
+            <div class="row">
+                <button type="file" class="col s12 m4 l4">Orta Afiş 1</button>
+                <button type="file" class="col s12 m4 l4">Orta Afiş 2</button>
+                <button type="file" class="col s12 m4 l4">Orta Afiş 3</button>
+
+            </div>
+            <div class="row">
+                <button type="file" type="file" class="col s12 m12 l12">Alt ana afiş</button>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="collapsible-header">
+            <i class="material-icons">add</i>
+            Kategori afişleri
+        </div>
+        <div class="collapsible-body">
+            <div class="row">
+                <button type="file" class="col s3 m3 l3">Üst küçük afiş</button>
+                <button type="file" class="col s9 m9 l9">Afiş</button>
+
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+<%- include partials/footer.ejs%>

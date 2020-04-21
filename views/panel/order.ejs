@@ -1,0 +1,134 @@
+<%- include partials/header.ejs %>
+
+<%if(page === 0){%>
+<ul class="collection with-header">
+    <li class="collection-header"><h4>Siparişler</h4></li>
+    <%for(let i = 0; i<ordersresult.length; i++){%>
+    <%if(ordersresult[i].trackingNumber === 0){%>
+    <li  class="collection-item"><div><b>ID: <%=ordersresult[i].orderId%></b> - <%=ordersresult[i].name%> - <b>Adet:</b> <%=ordersresult[i].qty%> - <b>Renk:</b> <%=ordersresult[i].color%> <b>Beden:</b> <%=ordersresult[i].size%> | Kargo takip numarası girmek için tıklayın!<a href="/panel/acceptorder?user=<%=ordersresult[i].userId%>&id=<%=ordersresult[i].orderId%>" class="secondary-content"><i class="material-icons tiny">send</i></a></div></li>
+    <%}else{%>
+    <li  class="collection-item"><div><b>ID: <%=ordersresult[i].orderId%></b> - <%=ordersresult[i].name%> - <b>Adet:</b> <%=ordersresult[i].qty%> - <b>Renk:</b> <%=ordersresult[i].color%> <b>Beden:</b> <%=ordersresult[i].size%> | <b>Kargo şirketi:</b> <%=ordersresult[i].company%> - <b>Kargo takip: </b><%=ordersresult[i].trackingNumber%><a href="/panel/removeorder" class="secondary-content"><i class="material-icons tiny">done</i></a></div></li>
+    <%}%>
+    <%}%>
+</ul>
+<%}else{%>
+    
+<h4>Sipariş Detay</h4>
+<div class="row" style="margin-top: 40px;">
+
+        <div class="col s12 l12 m12 chip">
+           
+                <b>ID: </b> <%=result.order[0].orderId%>        
+            </div>
+    <div class="col s12 l12 m12 chip">
+           
+    <b>Ad - Soyad:</b> <%=result.detail.clientname%> <%=result.detail.clientsurname%>
+
+  </div>
+    <div class="col s12 l12 m12 chip">
+        <b> Kimlik / Pasaport:</b> <%=result.detail.idnumber%> 
+    </div>
+    <div class="col s12 l12 m12 chip">
+
+        <b> İletişim:</b> <%=result.detail.phonenumber%> 
+
+    </div>
+    
+
+    </div>
+    <div class="row">
+    <div class="col s12 l12 m12 chip">
+
+        <b> Ürün:</b> <%=result.order[0].name%> 
+
+    </div>
+    <div class="col s12 l12 m12 chip">
+
+        <b> Renk:</b> <%=result.order[0].color%> 
+
+    </div>
+    <div class="col s12 l12 m12 chip">
+
+        <b> Beden:</b> <%=result.order[0].size%> 
+
+    </div>
+    </div>
+    <div class="row">
+    <div class="col s12 l12 m12 chip">
+
+        <b> Adet:</b> <%=result.order[0].qty%> 
+
+    </div>
+    <div class="col s12 l12 m12 chip">
+
+        <b> Ücret:</b> <%=result.order[0].price%> 
+
+    </div>
+</div>
+    <div class="row"> 
+        <div class="col s12 l12 m12 chip">
+             
+            <b>Adres başlığı:</b> <%=result.address[0].title%>
+        
+          </div>
+          <div class="col s12 l12 m12 chip">
+                 
+            <b>Ülke:</b> <%=result.address[0].country%>
+        
+          </div>
+          <div class="col s12 l12 m12 chip">
+                 
+            <b>Şehir:</b> <%=result.address[0].city%>
+        
+          </div></div>
+   
+      <div class="row">
+          <div class="col s12 l12 m12 chip">
+             
+        <b>Konum:</b> <%=result.address[0].location%>
+    
+      </div>
+      <div class="col s12 l12 m12 chip">
+             
+        <b>Posta kodu:</b> <%=result.address[0].postalcode%>
+    
+      </div>
+      <div class="col s12 l12 m12 chip">
+             
+        <b>Adres:</b> <%=result.address[0].content%>
+    
+      </div>
+    </div>
+           <form action="/panel/manageorders?q=1&orderId=<%=result.order[0].orderId%>" method="POST" style="margin-bottom: 100px;">
+               <div class="row">
+                    <div class="input-field col s12 m12 l12 ">
+                            <input name="cargoname" required placeholder="Yurtiçi Kargo" id="cargoname" type="text" class="validate">
+                            <label for="cargoname">Kargo şirketi: </label>
+                    </div>    
+               </div>
+               <div class="row">
+                    <div class="input-field col s12 m12 l12 ">
+                            <input type="number" name="cargono" required placeholder="" id="cargono" class="validate">
+                            <label for="cargono">Kargo takip no: </label>
+                    </div>    
+               </div>
+               <div class="row center">   <div class="col s6 m6 l6">  
+                    <button type="submit" class="waves-effect waves-light light-green btn">Kabul et</button>
+                </div>
+                <div class="col s6 m6 l6">  
+                        <a class="waves-effect waves-light red btn">Reddet</a>
+                    </div></div>
+            
+         
+        </form>  
+            
+      
+
+</div>
+
+
+
+    <%}%>
+
+
+<%- include partials/footer.ejs%>

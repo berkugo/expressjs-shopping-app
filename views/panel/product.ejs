@@ -1,0 +1,85 @@
+<%- include partials/header.ejs %>
+
+<form class="row" action="/panel/edit/<%= product.id %>" id="editform" method="POST">
+    <div class="col s6 m6 l6">
+        <%- include(`partials/types/${stock.type}`, {stocks: stock.stocks}); %>
+    </div>
+    <div class="col s6 m6 l6">
+        <div id="pType" class="row">
+            <div class="input-field col s12 m12 l12">
+                <select name="product_type" required>
+                    <% let temp = 1; %>
+                    <% for (let i = 0; i < headers.length; i++){ %>
+                    <optgroup label="<%= headers[i]%>">
+                        <% for (let j = 0; j < productInfo[i].length; j++) { %>
+                        <option value="<%= temp %>" <% if (product.productType === temp) { %> selected <% } %>>
+                            <%= productInfo[i][j] %></option>
+                        <% temp+=1; %>
+                        <% } %>
+                    </optgroup>
+                    <% } %>
+                </select>
+                <label>Kategori ve ürün tipi</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m12 l12">
+                <input value="<%= product.name %>" placeholder="" name="product_title" id="productDesc" type="text" class="validate" required>
+                <label for="first_name">Ürün başlığı</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m12 l12">
+                <input value="<%= product.color %>" placeholder="" name="product_color" id="productDesc" type="text" class="validate" required>
+                <label for="first_name">Ürün rengi</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m12 l12">
+                <input value="<%= product.productCode %>" placeholder="" name="product_code" id="productDesc" type="number" class="validate" required>
+                <label for="first_name">Ürün kodu</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m12 l12">
+                <input value="<%= product.description %>" placeholder="" name="product_desc" id="productDesc" type="text" class="validate" required>
+                <label for="first_name">Ürün açıklaması</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6 m6 l6">
+                <select name="money_type" required>
+                    <optgroup label="Para birimi">
+                        <option value="1">Türk Lirası / TRY</option>
+                        <option value="2">Avro / EUR</option>
+                        <option value="4">Dolar / US Dollar</option>
+                        <option value="5">Rus Rublesi / RUB</option>
+                        <option value="6">Ukrayna Grivnası / UAH</option>
+                        <option value="7">Nijerya Nairası / NGN</option>
+                        <option value="8">Kenya Şilini / KES</option>
+                    </optgroup>
+                </select>
+                <label>Para birimi</label>
+            </div>
+            <div class="input-field col s6 m6 l6">
+                <input value="<%= product.price %>" placeholder="" name="product_price" type="number" class="validate" required>
+                <label for="product_price">Ürün fiyatı</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <a id="edit" class="col right s12 m3 l3 offset-l1 offset-m1 waves-effect waves-light green btn-small">
+            <i class="large material-icons left">save</i>
+            Ürünü kaydet
+        </a>
+        <a id="delete" class="col right s12 m3 l3 waves-effect waves-light red btn-small">
+            <i class="large material-icons left">delete_forever</i>
+            Ürünü kaldır
+        </a>
+    </div>
+</form>
+
+<%-include partials/footer.ejs%>
+
+<script src="/javascripts/panel/edit.js"></script>

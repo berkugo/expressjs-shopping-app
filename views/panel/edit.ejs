@@ -1,0 +1,22 @@
+<%- include partials/header.ejs %>
+
+<form class="row" action="/panel/edit" id="editFindForm" method="POST">
+    <div style="margin-top: 10px;" class="col s12 m6 l6 offset-m3 offset-l3">
+        <div class="row">
+            <div class="input-field col s12 m12 l12">
+                <input placeholder="" name="id" id="productId" type="number" class="validate" required>
+                <label for="id">Düzenlemek istediğiniz ürünün ID numarası</label>
+            </div>
+            <a id="find" class="col right s12 m12 l12 offset-l1 offset-m1 waves-effect waves-light green btn-small">Ürün bul</a>
+        </div>
+        <% if (error) { %>
+        <div class="row">
+            <p class="red-text">Aradığınız ürün bulunamadı! Girdiğiniz ID'nin doğru olduğundan emin misiniz?</p>
+        </div>
+        <% } %>
+    </div>
+</form>
+
+<%- include partials/footer.ejs%>
+
+<script src="/javascripts/panel/edit.js"></script>

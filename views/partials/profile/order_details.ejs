@@ -1,0 +1,35 @@
+<a href="/profile/taken" class="waves-effect waves-light btn light-green darken-4 white-text valign-wrapper z-depth-0 col offset-s1">
+    <i class="material-icons left">arrow_back</i>
+    <%= session.siteText[session.siteLang].orderDetails.back %>
+</a>
+<br><br>
+<table class="col s6 offset-s1">
+    <thead>
+        <tr>
+            <th><%= session.siteText[session.siteLang].orderDetails.product %></th>
+            <!-- <th>Ürün Kodu</th> -->
+            <th><%= session.siteText[session.siteLang].orderDetails.amount %></th>
+            <th><%= session.siteText[session.siteLang].orderDetails.cost %></th>
+            <th><%= session.siteText[session.siteLang].orderDetails.total %></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% order.forEach(product => { %>
+        <tr>
+            <td>
+                <%= product.name %>
+                <br>
+                <div class="productDetails">
+                    <div class="colorbox" style="background-color:<%= product.color %>"></div>
+                    <p>Beden: <%= product.size.toUpperCase() %></p>
+                </div>
+            </td>
+            <!-- <td><%= product.id %></td> -->
+            <td><%= product.qty %></td>
+            <td><%= product.price %> ₺</td>
+            <td><%= (product.qty * product.price) %> ₺</td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>

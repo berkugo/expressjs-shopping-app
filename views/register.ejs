@@ -1,0 +1,43 @@
+<%- include partials/header %>
+
+<div class="row" style="margin-top:2rem">
+    <h5 class="center">Üye olun</h5>
+    <form action="/register/new-user" method="POST" class="col s12 m4 offset-m4">
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="email" id="email" type="email" class="validate">
+                <label for="email">E-posta adresiniz</label>
+                <span class="helper-text" data-error="Hatalı e-posta adresi" data-success="" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="password" id="password" type="password" class="validate">
+                <label for="password">Bir parola girin</label>
+                <span class="helper-text" data-error="" data-success="" />
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                <label>
+                    <input name="agreement" type="checkbox" />
+                    <span><a href="#" class="black-text">Üyelik Sözleşmesi</a> şartlarını okudum ve kabul ediyorum.</span>
+                </label>
+            </p>
+        </div>
+        <button class="waves-effect waves-light btn light-green darken-4 white-text col s12 m12" type="submit" name="action">
+            Bize katılın
+        </button>
+    </form>
+
+    <div class="row">
+        <p class="col s12 m12 center" style="margin-top: 3em; margin-bottom: 0;">Zaten bir Zalina hesabınız bulunuyor mu?</p>
+    </div>
+    <div class="row">
+        <a href="/login" class="waves-effect waves-light btn grey lighten-2 black-text col s12 m4 offset-m4 z-depth-0">
+            Giriş yap
+        </a>
+    </div>
+</div>
+
+<%- include partials/footer %>

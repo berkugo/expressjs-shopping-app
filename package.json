@@ -1,0 +1,29 @@
+{
+  "name": "zalina",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "docker": "export NODE_ENV=docker && node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "fs-extra": "^7.0.1",
+    "http-errors": "^1.6.3",
+    "knex": "^0.16.3",
+    "morgan": "~1.9.0",
+    "multer": "^1.4.1",
+    "mysql2": "^1.6.5",
+    "translate-json-object": "^2.3.3",
+    "yup": "^0.26.10"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.0"
+  }
+}

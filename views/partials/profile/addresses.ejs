@@ -1,0 +1,88 @@
+<form action="/profile/add_address" method="POST" class="col s12 m7 l7 z-depth-1"
+    style="border-style: solid; border-color: green; border-width:0.2px; border-radius: 1px; padding: 20px; margin-top: 9px;">
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">create</i>
+            <input value="" name="title" id="title" type="text" class="validate">
+            <label for="title"><%= session.siteText[session.siteLang].address.title %></label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s12 m6 l6">
+            <i class="material-icons prefix">flag</i>
+            <input type="text" name="country" id="autocomplete-input-country" class="autocomplete">
+            <label for="autocomplete-input"><%= session.siteText[session.siteLang].address.country %></label>
+        </div>
+        <div class="input-field col s12 m6 l6">
+            <i class="material-icons prefix">location_city</i>
+            <input type="text" name="city" id="autocomplete-input-city" class="autocomplete">
+            <label for="autocomplete-input"><%= session.siteText[session.siteLang].address.city %></label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s12 m6 l6">
+            <i class="material-icons prefix">home</i>
+            <input type="text" name="location" id="autocomplete-input-location" class="autocomplete">
+            <label for="autocomplete-input"><%= session.siteText[session.siteLang].address.state %></label>
+        </div>
+        <div class="input-field col s12 m6 l6">
+            <i class="material-icons prefix">mail</i>
+
+            <input value="" id="postalcode" name="postalcode" type="text" class="validate">
+            <label for="postalcode"><%= session.siteText[session.siteLang].address.postal %></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">mode_edit</i>
+            <textarea name="content" id="icon_prefix2" class="materialize-textarea"></textarea>
+            <label for="icon_prefix2"><%= session.siteText[session.siteLang].address.desc %></label>
+        </div>
+    </div>
+    <button class="waves-effect waves-light btn light-green darken-4 white-text col s12 m12" type="submit">
+        <%= session.siteText[session.siteLang].address.submit %>
+    </button>
+    <%if(validation === 'false'){%>
+    <div class="row">
+        <p class="col s12 m12 l12 left red-text center lostpwd"><%= session.siteText[session.siteLang].address.fail %>
+        </p>
+    </div>
+    <%}else if(validation === 'true'){%>
+    <div class="row">
+        <p class="col s12 m12 l12 left green-text center lostpwd">
+            <%= session.siteText[session.siteLang].address.success %></p>
+    </div>
+    <%}%>
+</form>
+<ul class="collection col s12 m7 l7 z-depth-1"
+    style="border-style: solid; border-color: green; border-width: 1px; border-radius: 0.2px; padding: 20px; margin-top: 9px;">
+    <li class="collection-item avatar">
+        <i class="material-icons circle green">location_city</i>
+        <span class="center-align title"><%= session.siteText[session.siteLang].address.saved %></span>
+
+    <ul style="margin-top: 20px;" class="collapsible">
+        <%if(addresses.length > 0) {%>
+        <% for(var i = 0; i<addresses.length; i++) { %>
+        <li>
+            <div class="collapsible-header">
+                <i class="material-icons">location_on</i>
+                <%=addresses[i].title%>
+            </div>
+            <div class="collapsible-body">
+                <p><b><%=addresses[i].city%> /
+                        <%=addresses[i].country%></b></p><br>
+                <p><%=addresses[i].content%>
+                </p>
+            </div>
+        </li>
+        <%}%>
+        <%}else{%>
+        <p class="center-align center z-depth-0"><%= session.siteText[session.siteLang].address.empty %></p>
+        <%}%>
+    </ul>
+
+    <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+    </li>
+</ul>

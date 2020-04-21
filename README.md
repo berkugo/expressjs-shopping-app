@@ -1,10 +1,11 @@
-# zalina-shopping-app
+# zalina
+baby you're a rich man
 
-Shopping based web application created by using **node.js / express.js** at server-side and **Materialize CSS** for front-end part. 
+## install
+**first** have a mysql server running (connection details are in the _knexfile.js_)
 
-Database / **knex** with mariadb
-
-`npx knex migrate:latest`
-
-`npx knex seed:run`
-
+```
+npm install
+npx knex migrate:latest
+npx knex seed:run
+```

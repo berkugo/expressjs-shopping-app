@@ -1,0 +1,83 @@
+<%- include partials/header %>
+
+<div class="container cartwrapper">
+    <br>
+    <h5 class="center"><b><%= session.siteText[session.siteLang].cart.title %></b></h5>
+    <br>
+
+    <div class="row">
+        <div class="col s8 m8 cart">
+            <% if (session.cart && session.cart.length > 0) { %>
+            <% session.cart.forEach((item, index) => { %>
+            <% total += item.totalPrice %>
+            <div id="<%= item.id %>" class="card horizontal">
+                <div class="card-image">
+                    <img src="https://via.placeholder.com/150x190.jpg?text=insert+image+here">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <button class="btn z-depth-0 button-rm right white red-text" style="cursor:pointer">X</button>
+                        <h6>
+                            <b>
+                                <%= item.name %>
+                                <br>
+                                <%= item.price.toFixed(2) %> ₺
+                            </b>
+                        </h6>
+                        <br>
+                        <p>
+                            <!-- Ürün kodu:
+                            <%= item.id %> -->
+                        </p>
+                        <p><%= session.siteText[session.siteLang].cart.size %>: <%= item.size %></p>
+                        <p><%= session.siteText[session.siteLang].cart.color %>: <%= item.color %></p>
+                        <p class="productTotal">
+                            <%= session.siteText[session.siteLang].cart.total %>:
+                            <%= item.totalPrice.toFixed(2) %> ₺
+                        </p>
+                        <div class="row valign-wrapper right">
+                            <a class="waves-effect waves-light btn qtyMinus white black-text z-depth-0">-</a>
+                            <div id="itemQty">
+                                <%= item.qty %>
+                            </div>
+                            <a class="waves-effect waves-light btn qtyPlus white black-text z-depth-0">+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+        <ul class="collection col s12 m4 cart">
+            <p class="center"><%= session.siteText[session.siteLang].cart.cartTotal %></p>
+
+            <li class="collection-item total">
+                <%= session.siteText[session.siteLang].cart.final %>
+                <div class="right">
+                    <%= total.toFixed(2) %> ₺
+                </div>
+            </li>
+            <li class="collection-item total">
+                <%= session.siteText[session.siteLang].cart.total %>
+                <div class="right">
+                    <%= total.toFixed(2) %> ₺
+                </div>
+            </li>
+            <li class="collection-item total">
+                WIP<br>
+                refresh to update for now
+            </li>
+            <br>
+            <a href="/cart/checkout" class="waves-effect waves-light btn black col s12"
+                style="margin-bottom:1em"><%= session.siteText[session.siteLang].cart.submit %></a>
+        </ul>
+    </div>
+    <% } else { %>
+    <h6><b><%= session.siteText[session.siteLang].cart.empty %></b></h6>
+    <p><%= session.siteText[session.siteLang].cart.emptyDetil %></p>
+    <% } %>
+</div>
+</div>
+</div>
+
+<%- include partials/footer %>
+<script src="/javascripts/cart.js"></script>

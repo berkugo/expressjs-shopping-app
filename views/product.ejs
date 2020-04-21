@@ -1,0 +1,71 @@
+<%- include partials/header %>
+
+<div class="row">
+    <div class="col s12 m4 offset-m2 carousel carousel-slider">
+        <% if (pics && pics.length > 0) { %>
+        <% pics.forEach(pic => { %>
+        <div class="carousel-item white white-text">
+            <img src="/products/<%= product.id %>/<%= pic %>" />
+        </div>
+        <% }); %>
+        <% } else { %>
+        <div class="carousel-item red white-text">
+            <img src="https://via.placeholder.com/800x900.jpg?text=Ürün+resmi+hazırlanıyor" />
+        </div>
+        <% } %>
+    </div>
+
+    <div id="product" class="col s12 m2 section scrollspy">
+        <h4 class="productName">
+            <%= product.name %>
+        </h4>
+        <h5>
+            <%= product.price.toFixed(2) %> ₺</h5>
+        <br><br>
+
+        <div>
+            <label>Renk</label>
+            <br>
+            <% colors.forEach((color, idx) => { %>
+            <a href="/product/<%= color.product %>" id="<%= color.id %>" class="btn-flat darken-3"
+                style="background-color: <%=color.name%>">
+                <% if (color.product === product.id) { %>
+                <i class="material-icons white-text">check</i>
+                <% }; %>
+            </a>
+            <% }); %>
+        </div>
+        <br>
+
+        <div class="input-field black-text sizes">
+            <select>
+                <% sizes.forEach((size, index) => { %>
+                <option value="<%= index %>"><%= size.name %></option>
+                <% }); %>
+            </select>
+            <label>Beden</label>
+        </div>
+
+        <% include partials/size-guide %>
+
+        <a class="waves-effect waves-light btn button-buy light-green darken-4 white-text col s12 m12 valign-wrapper">
+            <i class="material-icons left">shopping_cart</i>
+            <b class="center">Ekle</b>
+        </a>
+    </div>
+</div>
+<br>
+<div class="row">
+    <h5 class="col s10 m10 offset-m1 center">
+        <%= product.description %>
+    </h5>
+</div>
+
+<div class="row" style="margin: 3em 5%">
+    <img src="https://via.placeholder.com/600x900.jpg?text=insert+image+here" class="col s12 m4" />
+    <img src="https://via.placeholder.com/600x900.jpg?text=insert+image+here" class="col s12 m4" />
+    <img src="https://via.placeholder.com/600x900.jpg?text=insert+image+here" class="col s12 m4" />
+</div>
+
+<%- include partials/footer %>
+<script src="/javascripts/product.js"></script>

@@ -1,0 +1,37 @@
+<%- include partials/header.ejs %>
+
+<div class="row center center-align">
+    <form method="POST" action="/panel/add">
+        <div class="input-field col s12 m12 l12">
+            <select name="values" required>
+                <%let temp = 1; %>
+                <%for(let i = 0; i < headers.length; i++){%>
+                <optgroup value="<%=headers[i]%>" name="title" label="<%=headers[i]%>">
+                    <%for(let j = 0; j < productInfo[i].length; j++){%>
+                    <option value="<%=headers[i]%>*<%=productInfo[i][j]%>*<%=temp%>%>"><%=productInfo[i][j]%>
+                    </option>
+                    <%temp+=1;%>
+                    <%}%>
+                    </optgroup>
+                    <%}%>
+            </select>
+            <label>Kategori ve ürün tipi seçiniz</label>
+        </div>
+        <div class="input-field col s12 m12 l12">
+            <select name="type" required>
+                <option value="0">Beden yok / Ev tekstil & Züccaciye / Havlu</option>
+                <option value="1">Klasik Beden Ölçüsü (XS ... XXL)</option>
+                <option value="2">Çocuk Beden Ölçüsü (5 ... 14+ yaş)</option>
+                <option value="3">Bebek Beden Ölçüsü (1 ay ... 4 yaş)</option>
+                <option value="4">Yetişkin Ayakkabı (36 ... 45)</option>
+                <option value="5">Çocuk Ayakkabı (30 ... 35)</option>
+                <option value="6">Bebek Ayakkabı (20 ... 29)</option>
+                <option value="7">İç Çamaşarı / Sütyen</option>
+                <option value="8">İç Çamaşarı / Külot</option>
+            </select>
+            <label>Beden ölçü tipi seçiniz:</label>
+        </div>
+        <button class="center center-align waves-effect waves-light green btn-small">Devam et</button>
+    </form>
+</div>
+<%-include partials/footer.ejs%>

@@ -1,0 +1,29 @@
+<% if (orders && orders.length > 0) { %>
+<table class="col s6 offset-s1">
+    <thead>
+        <tr>
+            <th><%= session.siteText[session.siteLang].orders.order %></th>
+            <th><%= session.siteText[session.siteLang].orders.date %></th>
+            <th><%= session.siteText[session.siteLang].orders.amount %></th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% orders.forEach(order => { %>
+        <tr>
+            <td><%= order.id %></td>
+            <td><%= order.date %></td>
+            <td><%= order.qty %></td>
+            <td>
+                <a href="/profile/taken/<%= order.id %>">
+                    <i class="material-icons light-green-text text-darken-4">send</i>
+                </a>
+            </td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+<% } else { %>
+<h5 class="col s6 offset-s1 center">Hiç siparişiniz yok!</h5>
+<% } %>
