@@ -19,7 +19,7 @@ request.onreadystatechange = (request, response) => {
 
 document.querySelector('#upload-file-real').addEventListener('change', () => {
     if (filesToUpload.length === 5 || filesToUpload.length > 5 || document.querySelector('#upload-file-real').files.length > 5) {
-        alert('En fazla 5 adet ürün görseli yüklenebilir.');
+        alert('MAXIMUM 5');
         return;
     }
 

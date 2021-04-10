@@ -3,36 +3,37 @@
     <div class="row" style="margin-top: 2rem;">
 
         <form method="POST" action="/login" class="col s12 m6 l6">
-            <h5 class="center">Oturum aç</h5>
+            <span class="card-title">
+                <h5 style="font-family: sans-serif;" class="center">
+                    Login</h5>
+            </span>
             <div class="row">
                 <div class="input-field col s12">
                     <input id="email" name="email" type="email" class="validate">
-                    <label for="email">(*)E-posta</label>
+                    <label for="email">(*)E-Mail</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <input id="password" name="password" type="password" class="validate">
-                    <label for="password">(*)Parola</label>
+                    <label for="password">(*)Password</label>
                 </div>
                 <%if(wrongPass === 1) { %>
                 <div class="row">
-                    <p class="col s12 m12 l12 left red-text center lostpwd">Hatalı bir bilgi girdiniz ya da böyle bir
-                        kullanıcı bulunmuyor.</p>
+                    <p class="col s12 m12 l12 left red-text center lostpwd">Login failed.</p>
                 </div>
                 <%};%>
                 <div class="switch">
                     <label>
                         <input type="checkbox">
                         <span class="lever"></span>
-                        Oturumu açık tut
+                        Keep session 
                     </label>
                 </div>
             </div>
-            <button type="submit" class="waves-effect waves-light btn light-green darken-4 white-text col s12 m12">Oturum
-                Aç</button>
+            <button type="submit" class="waves-effect waves-light btn black darken-4 white-text col s12 m12">Login to Afrocheck</button>
             <div class="row">
-                <a href="/login/lost-password" class="col s12 m6 right black-text lostpwd">Parolanızı mı unuttunuz?</a>
+                <a href="/login/lost-password" class="col s12 m6 right black-text lostpwd">You forgot your password?</a>
             </div>
         </form>
 
@@ -42,16 +43,15 @@
             <div class=" card right">
                 <div class="card-content black-text">
                     <span class="card-title">
-                        <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="center">
-                            Yeni
-                            Müşteri</h5>
+                        <h5 class="center">
+                            New Account</h5>
                     </span>
-                    <p>Daha kolay ve sorunsuz bir alışveriş için bir Zalina hesabı oluşturun!</p>
+                    <p>Create an account to get amazing Afrocheck products!</p>
                 </div>
                 <div class="card-action center">
 
-                    <a href="/register" class="light-green darken-4 waves-effect waves-light btn z-depth-1">
-                        BİZE KATILIN
+                    <a href="/register" class="black darken-4 waves-effect waves-light btn z-depth-1">
+                        JOIN US
                     </a>
                 </div>
             </div>

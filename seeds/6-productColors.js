@@ -4,21 +4,27 @@ exports.seed = function (knex, Promise) {
         .then(function () {
             // Inserts seed entries
             return knex('productColors').insert([{
-                name: 'Siyah',
+                name: 'Black',
                 product: 1,
                 productCode: 155
             }, {
-                name: 'Mavi',
+                name: 'Blue',
                 product: 2,
-                productCode: 155
-            }, {
-                name: 'Mavi',
+                productCode: 156
+            },
+            {
+                name: 'Red',
+                product: 2,
+                productCode: 156
+            },
+             {
+                name: 'Dark Blue',
                 product: 3,
-                productCode: 156
+                productCode: 157
             }, {
-                name: 'Mor',
+                name: 'Purple',
                 product: 4,
-                productCode: 156
+                productCode: 158
             }]);
         });
 };

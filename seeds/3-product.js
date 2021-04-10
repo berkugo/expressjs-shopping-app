@@ -4,33 +4,33 @@ exports.seed = function (knex, Promise) {
         .then(function () {
             // Inserts seed entries
             return knex('products').insert([{
-                    name: 'Deri Ceket',
+                    name: 'Hoodie 1',
                     description: 'insert description here',
-                    price: '1499',
-                    productType: 2,
+                    price: '50',
+                    productType: 1,
                     productCode: 155
                 },
                 {
-                    name: 'Deri Ceket',
+                    name: 'Hoodie 2',
                     description: 'insert description here',
-                    price: '1499',
-                    productType: 2,
-                    productCode: 155
-                },
-                {
-                    name: 'Kapüşonlu Üst',
-                    description: 'description',
-                    price: '99.9',
-                    productType: 13,
+                    price: '60',
+                    productType: 1,
                     productCode: 156
+                },
+                {
+                    name: 'Hoodie 3',
+                    description: 'description',
+                    price: '70',
+                    productType: 1,
+                    productCode: 157
 
                 },
                 {
-                    name: 'Kapüşonlu Üst',
+                    name: 'Hoodie 4',
                     description: 'description',
-                    price: '99.9',
-                    productType: 13,
-                    productCode: 156
+                    price: '80',
+                    productType: 1,
+                    productCode: 158
 
                 },
             ]);

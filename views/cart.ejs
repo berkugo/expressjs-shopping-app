@@ -2,7 +2,7 @@
 
 <div class="container cartwrapper">
     <br>
-    <h5 class="center"><b><%= session.siteText[session.siteLang].cart.title %></b></h5>
+    <h5 class="center" style="font-family: 'Bree Serif', serif;"><b><%= session.siteText[session.siteLang].cart.title %></b></h5>
     <br>
 
     <div class="row">
@@ -72,7 +72,7 @@
         </ul>
     </div>
     <% } else { %>
-    <h6><b><%= session.siteText[session.siteLang].cart.empty %></b></h6>
+    <h6><%= session.siteText[session.siteLang].cart.empty %></h6>
     <p><%= session.siteText[session.siteLang].cart.emptyDetil %></p>
     <% } %>
 </div>

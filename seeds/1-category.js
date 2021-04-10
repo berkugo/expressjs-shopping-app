@@ -5,22 +5,25 @@ exports.seed = function (knex, Promise) {
             // Inserts seed entries
             return knex('categories').insert([
                 {
-                    name: 'Kadın'
+                    name: 'HOODIES'
                 },
                 {
-                    name: 'Erkek'
+                    name: 'JACKETS'
                 },
                 {
-                    name: 'Çocuk & Bebek'
+                    name: 'T-SHIRTS'
                 },
                 {
-                    name: 'Deri & Kürk'
+                    name: 'CAPS AND HATS'
                 },
                 {
-                    name: 'Ev Tekstil'
+                    name: 'BROOCHES AND PIN BADGES'
                 },
                 {
-                    name: 'Züccaciye & Mutfak Eşyaları'
+                    name: 'SOCKS'
+                },
+                {
+                    name: 'SCARFS AND MASK'
                 },
             ]);
         });

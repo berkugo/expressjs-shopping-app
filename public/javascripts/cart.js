@@ -20,7 +20,7 @@ $(document).ready(function () {
                 item.remove();
                 if ($('.button-rm').length < 1) {
                     $('.cart').remove();
-                    $('.container.cartwrapper').append('<h6><b>Alışveriş sepetiniz boş!</b></h6><p style="padding-bottom: 2em;">Alışveriş sepetinize ürün kaydetmek veya daha önce kaydedilmiş ürünlere erişmek için oturum açın.</p>');
+                    $('.container.cartwrapper').append('<h6><b>Your cart is empty!</b></h6><p style="padding-bottom: 2em;">Sign in to save items to your shopping cart or access previously saved items.</p>');
                 }
             });
     });
@@ -43,7 +43,7 @@ $(document).ready(function () {
                 .done((product) => {
                     $('#cartQty')[0].innerText = --cartQty;
                     itemQty.innerText = Number.parseInt(itemQty.innerText) - 1;
-                    itemQty.parentElement.parentElement.children[6].innerText = `Toplam: ${product.totalPrice.toFixed(2)} ₺`;
+                    itemQty.parentElement.parentElement.children[6].innerText = `Total: ${product.totalPrice.toFixed(2)} $`;
                 });
         }
     });
@@ -65,7 +65,7 @@ $(document).ready(function () {
             .done((product) => {
                 $('#cartQty')[0].innerText = ++cartQty;
                 itemQty.innerText = Number.parseInt(itemQty.innerText) + 1;
-                itemQty.parentElement.parentElement.children[6].innerText = `Toplam: ${product.totalPrice.toFixed(2)} ₺`;
+                itemQty.parentElement.parentElement.children[6].innerText = `Total: ${product.totalPrice.toFixed(2)} $`;
             });
     });
 });

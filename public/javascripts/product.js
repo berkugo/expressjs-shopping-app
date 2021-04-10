@@ -27,7 +27,7 @@ $(document).ready(function () {
             .done(() => {
                 $('#cartQty')[0].innerText = ++cartQty;
                 M.toast({
-                    html: `'${$('.productName')[0].innerText}' alışveriş sepetinize eklendi!`,
+                    html: `'${$('.productName')[0].innerText}' added to your cart.`,
                     classes: 'rounded'
                 });
             });
