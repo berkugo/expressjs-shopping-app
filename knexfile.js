@@ -2,10 +2,10 @@ module.exports = {
     development: {
         client: 'mysql2',
         connection: {
-            host: '192.168.1.21',
-            database: 'afrocheck_db',
-            user: 'afroroot',
-            password: 'charley123321',
+            host: '127.0.0.1',
+            database: 'afrocheckdb',
+            user: 'afrocheckroot',
+            password: 'chr123321',
             charset: 'utf8'
         }
     },
