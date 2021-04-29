@@ -5,13 +5,13 @@
         <div class="row">
             <div class="input-field col s12 m12 l12">
                 <input placeholder="" name="id" id="productId" type="number" class="validate" required>
-                <label for="id">Düzenlemek istediğiniz ürünün ID numarası</label>
+                <label for="id">ID number of the product you want to edit</label>
             </div>
-            <a id="find" class="col right s12 m12 l12 offset-l1 offset-m1 waves-effect waves-light green btn-small">Ürün bul</a>
+            <a id="find" class="col right s12 m12 l12 offset-l1 offset-m1 waves-effect waves-light green btn-small">Find product</a>
         </div>
         <% if (error) { %>
         <div class="row">
-            <p class="red-text">Aradığınız ürün bulunamadı! Girdiğiniz ID'nin doğru olduğundan emin misiniz?</p>
+            <p class="red-text">The product you are looking for was not found! Are you sure the ID you entered is correct?</p>
         </div>
         <% } %>
     </div>

@@ -9,53 +9,47 @@
     <div style="margin-top: 10px;" class="col s12 m6 l6">
         <div class="row">
             <div class="input-field col s12 m12 l12">
-                <input placeholder="Ürün başlığı girin.." name="product_title" id="productDesc" type="text" class="validate" required>
-                <label for="first_name">Ürün başlığı</label>
+                <input placeholder="Enter product title.." name="product_title" id="productDesc" type="text" class="validate" required>
+                <label for="first_name">Product title</label>
             </div>
         </div>
         <div class="row">
-            <p class="center" style="font-size: small;">Ürün rengi</p>
+            <p class="center" style="font-size: small;">Product color</p>
             <div class="center input-field col s12 m12 l12">
-                <input placeholder="Ürün rengini girin.." name="product_color" id="product_color" type="color" class="center-align validate" required>
-                <p class="right" style="font-size: small;">İpucu! Aynı ürünün farklı renkleri için teker teker ürün
-                    ekleyebilirsiniz.</p>
+                <input placeholder="Enter product color.." name="product_color" id="product_color" type="color" class="center-align validate" required>
+                <p class="right" style="font-size: small;">Hint! You can add products one by one for
+                    different colors of the same product.</p>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 m12 l12">
-                <input placeholder="Ürün kodunu girin.." name="product_code" id="productCode" type="number" class="validate" required>
-                <label for="first_name">Ürünün kodu</label>
-                <p class="right red-text" style="font-size: small;">Dikkat! Mevcut bir ürünün farklı renkteki
-                    versiyonunu ekliyorsanız, mevcut ürünün ürün kodunu girmelisiniz!</p>
+                <input placeholder="Enter Product code.." name="product_code" id="productCode" type="number" class="validate" required>
+                <label for="first_name">Product code</label>
+                <p class="right red-text" style="font-size: small;">Attention! If you are adding a different colored version of an existing product,
+                    you must enter the product code of the existing product!</p>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 m12 l12">
-                <input placeholder="Ürün açıklaması girin.." name="product_desc" id="productDesc" type="text" class="validate" required>
-                <label for="first_name">Ürün açıklaması</label>
+                <input placeholder="Enter product description.." name="product_desc" id="productDesc" type="text" class="validate" required>
+                <label for="first_name">Product description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6 m6 l6">
                 <select name="money_type" required>
-                    <option value="" disabled selected>Para birimi</option>
-                    <option value="1">Türk Lirası / TRY</option>
-                    <option value="2">Avro / EUR</option>
-                    <option value="4">Dolar / USD</option>
-                    <option value="5">Rus Rublesi / RUB</option>
-                    <option value="6">Ukrayna Grivnası / UAH</option>
-                    <option value="7">Nijerya Nairası / NGN</option>
-                    <option value="8">Kenya Şilini / KES</option>
+                    <option value="" disabled selected>Currency unit</option>
+                    <option value="1">Dolar / USD</option>
                 </select>
-                <label>Para birimi seçimi</label>
+                <label>Currency selection</label>
             </div>
             <div class="input-field col s6 m6 l6">
-                <input placeholder="Ürün ücreti" name="product_price" type="number" class="validate" required>
-                <label for="first_name">Ürün ücreti</label>
+                <input placeholder="Product fee" name="product_price" type="number" class="validate" required>
+                <label for="first_name">Product fee</label>
             </div>
             <div class="row">
-                <a class="col right s12 m5 l5 offset-l1 offset-m1 waves-effect waves-light green btn-small" id="upload-file-fake" style="margin-top:2em;"><span id="upinfo">Görsel yükle 0/5</span></a>
-                <a id="addproduct" class="col right s12 m5 l5 offset-l1 offset-m1 waves-effect waves-light green btn-small" style="margin-top:2em;">Ürünü ekle</a>
+                <a class="col right s12 m5 l5 offset-l1 offset-m1 waves-effect waves-light green btn-small" id="upload-file-fake" style="margin-top:2em;"><span id="upinfo">Upload image 0/5</span></a>
+                <a id="addproduct" class="col right s12 m5 l5 offset-l1 offset-m1 waves-effect waves-light green btn-small" style="margin-top:2em;">Add product</a>
                 <input type="file" accept="image/jpg, image/png" name="productimage" style="display:none" id="upload-file-real" />
             </div>
         </div>

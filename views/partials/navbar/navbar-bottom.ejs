@@ -1,6 +1,7 @@
 <div class="nav-wrapper">
-    <ul class="row">
-        <div class="col offset-l3">
+    <ul class="row center-align">
+       <!-- üst navbar kaldırıldı!
+       <div class="col offset-l3">
             <% header[headerLang].categories.forEach((category, index) => { %>
             <li class="col">
                 <a style="font-size: 12px; font-family: 'Bree Serif', serif; font-weight: bold;" class="black-text" href="/<%= header.links[index] %>">
@@ -8,14 +9,21 @@
                 </a>
             </li>
             <% }); %>
-        </div>
+        </div>  -->
+        <div class="center-align">
 
-        <div class="col right">
-            <form>
+            <a class="waves-effect waves-light btn center-align" href="/<%=header.links[0]%>" >Shop now
+                </a>
+
+        </div>
+        <div class="row">
+            <form class="col s3 offset-m5">
                 <div class="input-field">
                     <input id="search" type="search" style="height:auto" placeholder="<%= session.siteText[session.siteLang].search %>" required>
                     <label class="label-icon black-text" for="search"><i class="material-icons black-text">search</i></label>
                 </div>
             </form>
         </div>
+
     </ul>
+</div>
