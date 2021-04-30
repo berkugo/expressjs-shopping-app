@@ -24,7 +24,7 @@
         <br><br>
 
         <div>
-            <label>Renk</label>
+            <label>Color</label>
             <br>
             <% colors.forEach((color, idx) => { %>
             <a href="/product/<%= color.product %>" id="<%= color.id %>" class="btn-flat darken-3"
@@ -43,7 +43,7 @@
                 <option value="<%= index %>"><%= size.name %></option>
                 <% }); %>
             </select>
-            <label>Beden</label>
+            <label>Size</label>
         </div>
 
         <% include partials/size-guide %>
