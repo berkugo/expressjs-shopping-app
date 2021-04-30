@@ -14,7 +14,7 @@ const fs = require('fs-extra');
 router.get('/', async (req, res, next) => {
     req.session.uploaditeration = 0;
     res.render('panel/index', {
-        title: 'Zalina | Yönetim Paneli',
+        title: ' | Yönetim Paneli',
     });
 });
 
@@ -25,7 +25,7 @@ router.get('/selectcategory', async (req, res, next) => {
         products.push(result);
     }
     res.render('panel/selectproduct', {
-        title: 'Zalina | Yönetim Paneli',
+        title: ' | Yönetim Paneli',
         headers: req.app.locals.header['tr'].categories,
         productInfo: products,
     });
@@ -45,7 +45,7 @@ router.post('/add', async (req, res, next) => {
     ];
     console.log(req.body.values.split('*')[2]);
     res.render('panel/addproduct', {
-        title: 'Zalina | Ürün Ekleme',
+        title: ' | Ürün Ekleme',
         productType: req.body.values.split('*')[2],
         stockType: types[req.body.type],
     });
@@ -53,7 +53,7 @@ router.post('/add', async (req, res, next) => {
 
 router.get('/edit', async (req, res, next) => {
     res.render('panel/edit', {
-        title: 'Zalina | Ürün Düzenleme',
+        title: ' | Ürün Düzenleme',
         error: 0
     });
 });
@@ -70,7 +70,7 @@ router.post('/edit', async (req, res, next) => {
 
         const stock = await db.getProductStock(req.body.id);
         res.render('panel/product', {
-            title: 'Zalina | Ürün Düzenleme',
+            title: ' | Ürün Düzenleme',
             product,
             headers: req.app.locals.header['tr'].categories,
             productInfo,
@@ -78,7 +78,7 @@ router.post('/edit', async (req, res, next) => {
         });
     } else {
         res.render('panel/edit', {
-            title: 'Zalina | Ürün Düzenleme',
+            title: ' | Ürün Düzenleme',
             error: 1
         });
     }
