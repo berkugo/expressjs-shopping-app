@@ -8,7 +8,9 @@ nav.nav-extended .nav-wrapper i {
     height: inherit;
     font-size: 1.2em;
 }
-
+.btn {
+    background-color: #000000;
+}
 li {
     outline-style: none;
 }
