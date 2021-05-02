@@ -14,7 +14,7 @@ const fs = require('fs-extra');
 router.get('/', async (req, res, next) => {
     req.session.uploaditeration = 0;
     res.render('panel/index', {
-        title: ' | Yönetim Paneli',
+        title: ' Admin Panel',
     });
 });
 
@@ -25,8 +25,8 @@ router.get('/selectcategory', async (req, res, next) => {
         products.push(result);
     }
     res.render('panel/selectproduct', {
-        title: ' | Yönetim Paneli',
-        headers: req.app.locals.header['tr'].categories,
+        title: ' Admin Panel',
+        headers: req.app.locals.header['en'].categories,
         productInfo: products,
     });
 });
@@ -45,7 +45,7 @@ router.post('/add', async (req, res, next) => {
     ];
     console.log(req.body.values.split('*')[2]);
     res.render('panel/addproduct', {
-        title: ' | Ürün Ekleme',
+        title: ' Add Product',
         productType: req.body.values.split('*')[2],
         stockType: types[req.body.type],
     });
@@ -53,7 +53,7 @@ router.post('/add', async (req, res, next) => {
 
 router.get('/edit', async (req, res, next) => {
     res.render('panel/edit', {
-        title: ' | Ürün Düzenleme',
+        title: ' Edit Product',
         error: 0
     });
 });
@@ -63,14 +63,14 @@ router.post('/edit', async (req, res, next) => {
     if (product) {
         product.color = await db.getProductColor(product.id);
         const productInfo = [];
-        for (let i = 0; i < req.app.locals.header['tr'].categories.length; i++) {
-            const result = await db.getProductTypesByCategory(req.app.locals.header['tr'].categories[i]);
+        for (let i = 0; i < req.app.locals.header['en'].categories.length; i++) {
+            const result = await db.getProductTypesByCategory(req.app.locals.header['en'].categories[i]);
             productInfo.push(result);
         }
 
         const stock = await db.getProductStock(req.body.id);
         res.render('panel/product', {
-            title: ' | Ürün Düzenleme',
+            title: ' Edit Product',
             product,
             headers: req.app.locals.header['tr'].categories,
             productInfo,
@@ -78,7 +78,7 @@ router.post('/edit', async (req, res, next) => {
         });
     } else {
         res.render('panel/edit', {
-            title: ' | Ürün Düzenleme',
+            title: ' Edit Product',
             error: 1
         });
     }

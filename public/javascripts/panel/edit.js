@@ -4,7 +4,7 @@ $(document).ready(function () {
 
         for (var i = 0; i < eff.elements.length; i++) {
             if (eff.elements[i].value === '' && eff.elements[i].hasAttribute('required')) {
-                alert('Bulmak istediğiniz ürünün ID numarasını girin');
+                alert('Enter the ID number of the product you want to find');
                 return;
             }
         }
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
         for (var i = 0; i < eff.elements.length; i++) {
             if (eff.elements[i].value === '' && eff.elements[i].hasAttribute('required')) {
-                alert('Ürün düzenleme panelinde boş alan bırakamazsınız');
+                alert('You cannot leave blank space in the product edit panel');
                 return;
             }
         }

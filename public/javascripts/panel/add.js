@@ -26,7 +26,7 @@ document.querySelector('#upload-file-real').addEventListener('change', () => {
     for (let i = 0; i < elem.files.length; i++) {
         if (file_types.includes(elem.files[i].type) == true) {
             if (elem.files[i].size > available_file_size) {
-                alert("Görselin boyutu " + available_file_size / 1024 * 1024 + " MB'den büyük olamaz.")
+                alert("Image size "+"Cannot be bigger than" + available_file_size / 1024 * 1024 +".")
                 return;
             } else {
                 const file_data = new FormData();
@@ -36,7 +36,7 @@ document.querySelector('#upload-file-real').addEventListener('change', () => {
                 request.send(file_data);
             }
         } else {
-            alert("Bu dosya tipi desteklenmiyor. Sadece jpeg ve png.");
+            alert("This file type is not supported. Jpeg and png only.");
         }
     }
 
@@ -48,7 +48,7 @@ document.querySelector("#addproduct").addEventListener("click", () => {
 
     for (var i = 0; i < adminform.elements.length; i++) {
         if (adminform.elements[i].value === '' && adminform.elements[i].hasAttribute('required')) {
-            alert('Ürün ekleme panelinde boş alan bırakamazsınız.');
+            alert('You cannot leave blank space in the product insertion panel.');
             return;
         }
     }

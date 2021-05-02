@@ -114,7 +114,7 @@ router.get('/:param', async (req, res, next) => {
                 {
                     db.getUserInfoById(req.session.userid).then((result) => {
                         res.render('profile', {
-                            title: 'Zalina | Genel',
+                            title: ' General',
                             cPage: 0,
                             email: req.session.email,
                             userInfo: result[0]
@@ -128,7 +128,7 @@ router.get('/:param', async (req, res, next) => {
                     db.getUserInfoById(req.session.userid).then((result) => {
 
                         res.render('profile', {
-                            title: 'Zalina | Kişisel Bilgiler',
+                            title: ' Personal Information',
                             cPage: 1,
                             validation: true,
                             email: req.session.email,
@@ -144,7 +144,7 @@ router.get('/:param', async (req, res, next) => {
                     const orders = await db.getOrdersOfUser(req.session.userid);
 
                     res.render('profile', {
-                        title: 'Zalina | Sipariş',
+                        title: ' Order',
                         cPage: 2,
                         userInfo: result[0],
                         orders: orders[0]
@@ -157,7 +157,7 @@ router.get('/:param', async (req, res, next) => {
 
                         db.getAddress(req.session.userid).then(addressResult => {
                             res.render('profile', {
-                                title: 'Zalina | Adres Bilgileri',
+                                title: ' Address Info',
                                 cPage: 3,
                                 validation: req.query.validation,
                                 addresses: addressResult,
