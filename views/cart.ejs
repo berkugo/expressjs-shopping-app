@@ -21,7 +21,7 @@
                             <b>
                                 <%= item.name %>
                                 <br>
-                                <%= item.price.toFixed(2) %> ₺
+                                <%= item.price.toFixed(2) %> €
                             </b>
                         </h6>
                         <br>
@@ -33,7 +33,7 @@
                         <p><%= session.siteText[session.siteLang].cart.color %>: <%= item.color %></p>
                         <p class="productTotal">
                             <%= session.siteText[session.siteLang].cart.total %>:
-                            <%= item.totalPrice.toFixed(2) %> ₺
+                            <%= item.totalPrice.toFixed(2) %> €
                         </p>
                         <div class="row valign-wrapper right">
                             <a class="waves-effect waves-light btn qtyMinus white black-text z-depth-0">-</a>
@@ -53,13 +53,13 @@
             <li class="collection-item total">
                 <%= session.siteText[session.siteLang].cart.final %>
                 <div class="right">
-                    <%= total.toFixed(2) %> ₺
+                    <%= total.toFixed(2) %> €
                 </div>
             </li>
             <li class="collection-item total">
                 <%= session.siteText[session.siteLang].cart.total %>
                 <div class="right">
-                    <%= total.toFixed(2) %> ₺
+                    <%= total.toFixed(2) %> €
                 </div>
             </li>
             <li class="collection-item total">
@@ -69,6 +69,31 @@
             <br>
             <a href="/cart/checkout" class="waves-effect waves-light btn black col s12"
                 style="margin-bottom:1em"><%= session.siteText[session.siteLang].cart.submit %></a>
+            <br>
+            <script src="https://www.paypal.com/sdk/js?client-id=Ac9fNMbLWq_grGamUR-rmOUEkVzEZQnTtYkCVs8kZs6nyV_fWIZ3mB5rKkFDjbGPr4qvz6i-mlaxApSd"> // Replace YOUR_CLIENT_ID with your sandbox client ID
+            </script>
+
+            <div id="paypal-button-container"></div>
+
+            <!-- Add the checkout buttons, set up the order and approve the order -->
+            <script>
+                paypal.Buttons({
+                    createOrder: function(data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: '0.01'
+                                }
+                            }]
+                        });
+                    },
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details) {
+                            alert('Transaction completed by ' + details.payer.name.given_name);
+                        });
+                    }
+                }).render('#paypal-button-container'); // Display payment options on your web page
+            </script>
         </ul>
     </div>
     <% } else { %>
