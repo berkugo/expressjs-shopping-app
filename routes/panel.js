@@ -26,7 +26,7 @@ router.get('/selectcategory', async (req, res, next) => {
     }
     res.render('panel/selectproduct', {
         title: ' Admin Panel',
-        headers: req.app.locals.header['en'].categories,
+        headers: req.app.locals.header['tr'].categories,
         productInfo: products,
     });
 });
@@ -63,8 +63,8 @@ router.post('/edit', async (req, res, next) => {
     if (product) {
         product.color = await db.getProductColor(product.id);
         const productInfo = [];
-        for (let i = 0; i < req.app.locals.header['en'].categories.length; i++) {
-            const result = await db.getProductTypesByCategory(req.app.locals.header['en'].categories[i]);
+        for (let i = 0; i < req.app.locals.header['tr'].categories.length; i++) {
+            const result = await db.getProductTypesByCategory(req.app.locals.header['tr'].categories[i]);
             productInfo.push(result);
         }
 

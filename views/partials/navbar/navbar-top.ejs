@@ -30,7 +30,14 @@
                 <i class="material-icons left">shopping_basket</i><%= session.siteText[session.siteLang].navTop.cart %>
                 (<%=(session.cart) ? session.cartQty : 0; %>)
             </a>
+
         </li>
+        <li>
+            <a href="/about-us" style="font-size: 12px;" class="black-text valign-wrapper">
+                <i class="material-icons left">person</i>About Us<%= session.siteText[session.siteLang].navTop.aboutus %>
+            </a>
+        </li>
+
 
     
     </ul>
@@ -78,6 +85,11 @@
                     <%= (session.cart) ? session.cartQty : 0; %>
                 </div>
                 )
+            </a>
+        </li>
+        <li>
+            <a href="/about-us" style="font-size: 12px;" class="black-text valign-wrapper">
+                <i class="material-icons left">info</i><%= session.siteText[session.siteLang].navTop.aboutus %>
             </a>
         </li>
     </ul>
