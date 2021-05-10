@@ -7,7 +7,8 @@
     "docker": "export NODE_ENV=docker && node ./bin/www"
   },
   "dependencies": {
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "debug": "~2.6.9",
@@ -21,8 +22,7 @@
     "multer": "^1.4.2",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
-    "pg": "^8.6.0",
-    "pg-native": "^3.0.0",
+    "npx": "^10.2.2",
     "sqlite3": "^5.0.2",
     "tedious": "^11.0.7",
     "translate-json-object": "^2.3.7",
