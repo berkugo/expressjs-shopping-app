@@ -1,7 +1,7 @@
 <%- include partials/header %>
 
 <div class="row">
-    <div class="col s12 m4 offset-m2 carousel carousel-slider">
+    <div class="col s12 m4 offset-m2 carousel carousel-slider custom-c-slider">
         <% if (pics && pics.length > 0) { %>
         <% pics.forEach(pic => { %>
         <div class="carousel-item white white-text">
@@ -20,11 +20,11 @@
             <%= product.name %>
         </h4>
         <h5>
-            <%= product.price.toFixed(2) %> ₺</h5>
+            <%= product.price.toFixed(2) %> €</h5>
         <br><br>
 
         <div>
-            <label>Renk</label>
+            <label>Color</label>
             <br>
             <% colors.forEach((color, idx) => { %>
             <a href="/product/<%= color.product %>" id="<%= color.id %>" class="btn-flat darken-3"
@@ -43,7 +43,7 @@
                 <option value="<%= index %>"><%= size.name %></option>
                 <% }); %>
             </select>
-            <label>Beden</label>
+            <label>Size</label>
         </div>
 
         <% include partials/size-guide %>

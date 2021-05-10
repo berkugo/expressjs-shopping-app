@@ -9,12 +9,12 @@ module.exports = {
     },
     search: 'Search for the products',
     navTop: {
-        customerServices: 'Customer Service',
         logout: 'Log Out',
         login: 'Login',
         profile: 'Profile',
         favorites: 'Favorite',
         cart: 'Shopping Cart',
+        aboutus: 'About-Us',
     },
     footer: {
         corp: 'Corporate',

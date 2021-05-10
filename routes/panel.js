@@ -14,7 +14,7 @@ const fs = require('fs-extra');
 router.get('/', async (req, res, next) => {
     req.session.uploaditeration = 0;
     res.render('panel/index', {
-        title: 'Zalina | Yönetim Paneli',
+        title: ' Admin Panel',
     });
 });
 
@@ -25,7 +25,7 @@ router.get('/selectcategory', async (req, res, next) => {
         products.push(result);
     }
     res.render('panel/selectproduct', {
-        title: 'Zalina | Yönetim Paneli',
+        title: ' Admin Panel',
         headers: req.app.locals.header['tr'].categories,
         productInfo: products,
     });
@@ -43,9 +43,9 @@ router.post('/add', async (req, res, next) => {
         "underwear-top",
         "underwear-bottom"
     ];
-
+    console.log(req.body.values.split('*')[2]);
     res.render('panel/addproduct', {
-        title: 'Zalina | Ürün Ekleme',
+        title: ' Add Product',
         productType: req.body.values.split('*')[2],
         stockType: types[req.body.type],
     });
@@ -53,7 +53,7 @@ router.post('/add', async (req, res, next) => {
 
 router.get('/edit', async (req, res, next) => {
     res.render('panel/edit', {
-        title: 'Zalina | Ürün Düzenleme',
+        title: ' Edit Product',
         error: 0
     });
 });
@@ -70,7 +70,7 @@ router.post('/edit', async (req, res, next) => {
 
         const stock = await db.getProductStock(req.body.id);
         res.render('panel/product', {
-            title: 'Zalina | Ürün Düzenleme',
+            title: ' Edit Product',
             product,
             headers: req.app.locals.header['tr'].categories,
             productInfo,
@@ -78,7 +78,7 @@ router.post('/edit', async (req, res, next) => {
         });
     } else {
         res.render('panel/edit', {
-            title: 'Zalina | Ürün Düzenleme',
+            title: ' Edit Product',
             error: 1
         });
     }
@@ -177,10 +177,11 @@ router.post('/addproduct', async (req, res, next) => {
     db.insertProduct(req.body).then(res => {
         const productid = res;
         if (fs.existsSync('./temp/' + req.session.userid) && req.session.uploaditeration > 0) {
+            console.log(productid)
             fs.mkdirSync('./public/products/' + productid, {
                 recursive: true
             });
-            for (var i = 0; i < req.session.uploaditeration; i++) {
+            for (let i = 0; i < req.session.uploaditeration; i++) {
                 fs.copyFileSync('./temp/' + req.session.userid + '/' + i + '.png', './public/products/' + productid + '/' + i + '.png');
             }
             fs.removeSync('./temp/' + req.session.userid);
@@ -196,8 +197,12 @@ router.post('/addimage', type, async (req, res, next) => {
             recursive: true
         });
     }
+
+
     await fs.writeFile('./temp/' + req.session.userid + '/' + req.session.uploaditeration + '.png', req.file.buffer).then(err => {
-        req.session.uploaditeration += 1;
+        if(fs.existsSync('./temp/' + req.session.userid)) {
+            req.session.uploaditeration += 1;
+        }
         res.send('Uploaded to temp.');
     })
 });

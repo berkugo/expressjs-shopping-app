@@ -19,63 +19,57 @@
                     </optgroup>
                     <% } %>
                 </select>
-                <label>Kategori ve ürün tipi</label>
+                <label>Category and product type</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12 m12 l12">
                 <input value="<%= product.name %>" placeholder="" name="product_title" id="productDesc" type="text" class="validate" required>
-                <label for="first_name">Ürün başlığı</label>
+                <label for="first_name">Product title</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 m12 l12">
                 <input value="<%= product.color %>" placeholder="" name="product_color" id="productDesc" type="text" class="validate" required>
-                <label for="first_name">Ürün rengi</label>
+                <label for="first_name">Product color</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 m12 l12">
                 <input value="<%= product.productCode %>" placeholder="" name="product_code" id="productDesc" type="number" class="validate" required>
-                <label for="first_name">Ürün kodu</label>
+                <label for="first_name">Product code</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 m12 l12">
                 <input value="<%= product.description %>" placeholder="" name="product_desc" id="productDesc" type="text" class="validate" required>
-                <label for="first_name">Ürün açıklaması</label>
+                <label for="first_name">Product description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6 m6 l6">
                 <select name="money_type" required>
-                    <optgroup label="Para birimi">
-                        <option value="1">Türk Lirası / TRY</option>
-                        <option value="2">Avro / EUR</option>
-                        <option value="4">Dolar / US Dollar</option>
-                        <option value="5">Rus Rublesi / RUB</option>
-                        <option value="6">Ukrayna Grivnası / UAH</option>
-                        <option value="7">Nijerya Nairası / NGN</option>
-                        <option value="8">Kenya Şilini / KES</option>
+                    <optgroup label="Currency unit">
+                        <option value="1">Euro / EUR</option>
                     </optgroup>
                 </select>
-                <label>Para birimi</label>
+                <label>Currency unit</label>
             </div>
             <div class="input-field col s6 m6 l6">
                 <input value="<%= product.price %>" placeholder="" name="product_price" type="number" class="validate" required>
-                <label for="product_price">Ürün fiyatı</label>
+                <label for="product_price">Product fee</label>
             </div>
         </div>
     </div>
     <div class="row">
         <a id="edit" class="col right s12 m3 l3 offset-l1 offset-m1 waves-effect waves-light green btn-small">
             <i class="large material-icons left">save</i>
-            Ürünü kaydet
+            Save product
         </a>
         <a id="delete" class="col right s12 m3 l3 waves-effect waves-light red btn-small">
             <i class="large material-icons left">delete_forever</i>
-            Ürünü kaldır
+            Remove product
         </a>
     </div>
 </form>

@@ -5,10 +5,51 @@
         <div class="types">
             <%- include partials/sidemenu %>
         </div>
+        <div style="margin: 3px; border-radius: 3px;" class="col s12 m8 offset-m1 black darken-4 ">
+            <h5
+                    style="font-family: 'Bree Serif', serif;"
+                    class="center-align white-text">
+                Every item you purchase on our website, sends 1 Euro to the JOKA Foundation to save lives.
+            </h5>
+        </div>
+        <div class="col s12 m8 center grey lighten-5 ">
+            <h3 style="font-weight: lighter; font-family: sans-serif; color: dimgray;">JOKA FOUNDATION</h3>
+            <p style="font-family: sans-serif;">
+                JOKA charity foundation help’s support needy, sick and poor communities in parts of Africa.
+                Our dream is to build water pumps for clean drinking water, libraries, donate cloths, food,
+                medicine and community shelters for poor neighborhoods in some parts of Africa.
+            </p>
+        </div>
 
-        <img src="https://via.placeholder.com/900x200.jpg?text=insert+image+here" class="col s12 m8 offset-m1" style="padding-bottom:2em;" />
-        <img src="https://via.placeholder.com/900x600.jpg?text=insert+image+here" class="col s12 m8 offset-m1" />
+        <script>
+            $(document).ready(function (){
+                $('.carousel').carousel({fullWidth: true});
+            });
+        </script>
+
+        <div  class="col s12 m8 offset-m3 carousel carousel-slider" style="margin-top:-40px">
+
+
+            <div   class=" carousel-item white white-text text-center">
+
+                    <img style="width: 406px; height: 768px;" src="/images/joka1.png">
+
+
+            </div>
+
+            <div  class=" carousel-item white white-text text-center">
+                <img style="width: 406px; height: 768px;" src="/images/joka4.png" >
+            </div>
+
+            <div  class=" carousel-item white white-text text-center">
+            <img style="width: 406px; height: 768px;" src="/images/joka3.png">
+            </div>
+
     </div>
+
+
 </div>
 
+
+</div>
 <%- include partials/footer %>

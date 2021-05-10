@@ -5,7 +5,7 @@ const db = require('../lib/db/queries');
 // mounts to /cart
 router.get('/', (req, res, next) => {
     res.render('cart', {
-        title: 'Zalina | Alışveriş Sepeti',
+        title: ' Cart',
         total: 0,
     });
 });

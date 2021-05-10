@@ -8,10 +8,28 @@ nav.nav-extended .nav-wrapper i {
     height: inherit;
     font-size: 1.2em;
 }
-
+.text-center
+{
+    text-align:center ! important;
+}
+.btn {
+    background-color: #000000;
+}
 li {
     outline-style: none;
 }
+.listing_img img {
+    width: 490px! important;
+    height: 670px! important;
+    object-fit: cover ! important;
+}
+.custom-c-slider{
+    width: 600px! important;
+    height: 670px! important;
+    object-fit: cover ! important;
+
+}
+
 
 #dropdown-cart {
     text-align: center;
@@ -61,7 +79,8 @@ form h5 {
 }
 
 #product {
-    margin-left: 5%;
+    margin-left: 10%;
+    margin-top: 2%;
 }
 
 #sg {

@@ -18,7 +18,7 @@ const profileRouter = require('./routes/profile');
 const cartRouter = require('./routes/cart');
 const panelRouter = require('./routes/panel');
 const langRouter = require('./routes/lang');
-
+const aboutUsRouter = require('./routes/about-us');
 const app = express();
 
 // view engine setup
@@ -47,6 +47,7 @@ app.use('/profile', profileRouter);
 app.use('/cart', cartRouter);
 app.use('/panel', panelAuth.isAdmin, panelRouter);
 app.use('/lang', langRouter);
+app.use('/about-us', aboutUsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
