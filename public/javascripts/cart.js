@@ -3,8 +3,8 @@ $(document).ready(function () {
 
     $('.button-rm').click((event) => {
         const item = event.target.parentElement.parentElement.parentElement;
-        const size = event.target.parentElement.children[4].innerText.substr(7);
-        const color = event.target.parentElement.children[5].innerText.substr(6);
+        const size = event.target.parentElement.children[4].innerText.substr(6);
+        const color = event.target.parentElement.children[5].innerText.substr(7);
         $.ajax({
                 method: 'POST',
                 url: `/cart/remove`,
@@ -28,8 +28,9 @@ $(document).ready(function () {
     $('.qtyMinus').click((event) => {
         const item = event.target.parentElement.parentElement.parentElement.parentElement;
         const itemQty = event.target.parentElement.children[1];
-        const size = event.target.parentElement.parentElement.children[4].innerText.substr(7);
-        const color = event.target.parentElement.parentElement.children[5].innerText.substr(6);
+        const size = event.target.parentElement.parentElement.children[4].innerText.substr(6);
+        console.log(event.target.parentElement.parentElement.children)
+        const color = event.target.parentElement.parentElement.children[5].innerText.substr(7);
         if (Number.parseInt(itemQty.innerText) - 1 > 0) {
             $.ajax({
                     method: 'POST',

@@ -30,17 +30,18 @@
                             <%= item.id %> -->
                         </p>
                         <p><%= session.siteText[session.siteLang].cart.size %>: <%= item.size %></p>
-                        <p><%= session.siteText[session.siteLang].cart.color %>: <%= item.color %></p>
+                        <p syle="background-color= <%= item.color %>"><%= session.siteText[session.siteLang].cart.color %>: <%= item.color %>
+                        </p>
                         <p class="productTotal">
                             <%= session.siteText[session.siteLang].cart.total %>:
                             <%= item.totalPrice.toFixed(2) %> €
                         </p>
                         <div class="row valign-wrapper right">
-                            <a class="waves-effect waves-light btn qtyMinus white black-text z-depth-0">-</a>
+                            <a ></a>
                             <div id="itemQty">
-                                <%= item.qty %>
+                                Quantity: <%= item.qty %>
                             </div>
-                            <a class="waves-effect waves-light btn qtyPlus white black-text z-depth-0">+</a>
+                            <a></a>
                         </div>
                     </div>
                 </div>

@@ -45,6 +45,7 @@ router.post('/add', async (req, res, next) => {
 // mounts to /cart/remove
 router.post('/remove', (req, res, next) => {
     if (req.session.cart) {
+        console.log(req.session.cart, req.body)
         const idx = req.session.cart.findIndex(item => {
             return (
                 item.id === Number.parseInt(req.body.id) &&
