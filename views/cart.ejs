@@ -77,7 +77,7 @@
 
             <!-- Add the checkout buttons, set up the order and approve the order -->
             <script>
-                const productsBought = <%= session.cart %>  
+                // const productsBought = <%= session.cart %>  
                 const price = <%= total.toFixed(2) %>      
                 paypal.Buttons({
                     createOrder: function(data, actions) {
@@ -91,7 +91,7 @@
                         });
                     },
                     onApprove: function(data, actions) {
-                        window.location.href = "afrocheck.net/product/completed?productId="
+                        // window.location.href = "afrocheck.net/product/completed?productId="
                         return actions.order.capture().then(function(details) {
                             alert('Transaction completed by ' + details.payer.name.given_name);
                         });
