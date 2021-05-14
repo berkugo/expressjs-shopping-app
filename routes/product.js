@@ -6,7 +6,18 @@ const fs = require('fs-extra');
 
 // mounts to /product/id
 
-router.get("/completed")
+router.get("/completed", async (req, res) => {
+
+    const dataToShow = {}
+    
+    req.session.cart.findIndex(item => { 
+        dataToShow.color = item.color
+    
+    })
+
+    res.render("order", dataToShow)
+
+})
 
 router.get('/:id', async (req, res, next) => {
     const product = await db.getProductById(req.params.id);
