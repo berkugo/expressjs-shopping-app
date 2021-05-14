@@ -88,8 +88,7 @@ router.post('/manageorders', async (req, res, next) =>
 {
         try
         {
-            console.log(req.body);
-            console.log(req.query);
+
                 if('q' in req.query)
                 {
                     if(req.query.q === '1')

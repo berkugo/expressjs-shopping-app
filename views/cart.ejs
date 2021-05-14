@@ -70,19 +70,22 @@
 
 
             <br>
-            <script src="https://www.paypal.com/sdk/js?client-id=Ac9fNMbLWq_grGamUR-rmOUEkVzEZQnTtYkCVs8kZs6nyV_fWIZ3mB5rKkFDjbGPr4qvz6i-mlaxApSd"> // Replace YOUR_CLIENT_ID with your sandbox client ID
+            <script src="https://www.paypal.com/sdk/js?currency=EUR&client-id=AaZ12UMBHYqcwRB1ZUy3rd-_AnLj2JETp0Ta2zMuw8MfsuTp3Oh8vr_BAAbiiPMbfzIbzVuiGqO3HAIx"> // Replace YOUR_CLIENT_ID with your sandbox client ID
             </script>
 
             <div id="paypal-button-container"></div>
 
             <!-- Add the checkout buttons, set up the order and approve the order -->
             <script>
+                const price = <%= total.toFixed(2) %>      
+                console.log(price)    
                 paypal.Buttons({
                     createOrder: function(data, actions) {
                         return actions.order.create({
                             purchase_units: [{
                                 amount: {
-                                    value: '0.01'
+                                    currency_code: "EUR",
+                                    value: price
                                 }
                             }]
                         });
