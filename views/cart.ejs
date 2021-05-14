@@ -78,7 +78,8 @@
             <!-- Add the checkout buttons, set up the order and approve the order -->
             <script>
                 const productsBought = <%= session.cart %>  
-                const price = <%= total.toFixed(2) %>      
+                const price = <%= total.toFixed(2) %> 
+                console.log(productsBought)     
                 paypal.Buttons({
                     createOrder: function(data, actions) {
                         return actions.order.create({
