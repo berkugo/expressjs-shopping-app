@@ -79,9 +79,12 @@
             <script>
                 const productsBought = <%= session.cart %>  
                 const price = <%= total.toFixed(2) %> 
-                console.log(productsBought)     
                 paypal.Buttons({
                     createOrder: function(data, actions) {
+
+                        console.log(productsBought)     
+
+
                         return actions.order.create({
                             purchase_units: [{
                                 amount: {
