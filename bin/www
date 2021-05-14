@@ -6,20 +6,29 @@
 
 var app = require('../app');
 var debug = require('debug')('zalina:server');
-var http = require('http');
-
+var http = require('https');
+const fs = require('fs');
+const path = require('path');
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '443');
 app.set('port', port);
+
+// readFileSync function must use __dirname get current directory
+// require use ./ refer to current directory.
+
+const options = {
+  cert: fs.readFileSync(path.resolve(__dirname, './fullchain.pem')),
+    key: fs.readFileSync(path.resolve(__dirname, './privkey.pem'))
+} 
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
