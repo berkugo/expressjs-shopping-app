@@ -10,10 +10,7 @@ router.get("/completed", async (req, res) => {
 
     const dataToShow = {}
     
-    req.session.cart.findIndex(item => { 
-        dataToShow.color = item.color
-    
-    })
+    console.log(JSON.stringify(req.session.cart))
 
     res.render("order", dataToShow)
 
