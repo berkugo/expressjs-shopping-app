@@ -5,6 +5,9 @@ const util = require('../lib/util');
 const fs = require('fs-extra');
 
 // mounts to /product/id
+
+router.get("/completed")
+
 router.get('/:id', async (req, res, next) => {
     const product = await db.getProductById(req.params.id);
     if (product) {

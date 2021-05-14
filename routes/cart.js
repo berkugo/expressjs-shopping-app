@@ -29,6 +29,7 @@ router.post('/add', async (req, res, next) => {
         );
     });
     if (idx === -1) {
+        product.productId = req.body.id
         product.qty = 1;
         product.totalPrice = product.price;
         product.size = req.body.size;
