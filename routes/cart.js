@@ -4,10 +4,22 @@ const db = require('../lib/db/queries');
 
 // mounts to /cart
 router.get('/', (req, res, next) => {
-    res.render('cart', {
-        title: ' Cart',
-        total: 0,
-    });
+
+
+    if (req.query.firstname && req.query.surname && req.query.address && req.query.number) {
+        req.session.orderData = req.query
+    }
+    if (req.session.orderData || !req.session.cart) {
+        res.render('cart', {
+            title: ' Cart',
+            total: 0,
+        });
+    } else {
+        res.render('orderform', {
+            title: ' Cart',
+            total: 0,
+        });
+    }
 });
 
 // mounts to /cart/add

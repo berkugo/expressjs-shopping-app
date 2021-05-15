@@ -8,12 +8,25 @@ const fs = require('fs-extra');
 
 router.get("/completed", async (req, res) => {
 
-    const dataToShow = {}
-    
-    console.log(JSON.stringify(req.session.cart))
-
-    res.render("order", dataToShow)
-
+    const cart = req.session.cart
+    if (req.session.cart && req.session.orderData) {
+        const orderDetailedData = {...req.session.cart, ...req.session.orderData}
+        const jsonString = JSON.stringify(orderDetailedData)
+        fs.writeFile(`./orders/${Math.round(+new Date()/1000)}.json`, jsonString, err => {
+            if (err) {
+                console.log('Error writing file', err)
+            } else {
+                console.log('Successfully wrote file')
+            }
+        })
+        res.render("order", {
+            title: "Order List",
+            orderData: cart
+        })
+        req.session.cart = [], req.session.cartQty = 0
+    } else {
+        return res.redirect("/")
+    }
 })
 
 router.get('/:id', async (req, res, next) => {
