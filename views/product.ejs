@@ -5,12 +5,12 @@
         <% if (pics && pics.length > 0) { %>
         <% pics.forEach(pic => { %>
         <div class="carousel-item white white-text">
-            <img style="object-fit: contain; background-color: transparent;"  width="300px" height="600px" src="/products/<%= product.id %>/<%= pic %>" />
+            <img style="object-fit: contain; background-color: transparent;"  width="300px" height="500px" src="/products/<%= product.id %>/<%= pic %>" />
         </div>
         <% }); %>
         <% } else { %>
         <div class="carousel-item transparent white-text">
-            <img style="object-fit: contain; background-color: transparent;"  width="300px" height="600px" src="https://via.placeholder.com/800x900.jpg?text=Ürün+resmi+hazırlanıyor" />
+            <img style="object-fit: contain; background-color: transparent;"  width="300px" height="500px" src="https://via.placeholder.com/800x900.jpg?text=Ürün+resmi+hazırlanıyor" />
         </div>
         <% } %>
     </div>
