@@ -21,7 +21,6 @@ li {
 .listing_img img {
     width: 490px! important;
     height: 670px! important;
-    object-fit: cover ! important;
 }
 .custom-c-slider{
     width: 600px! important;
