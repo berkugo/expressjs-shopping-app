@@ -28,7 +28,7 @@
             <br>
             <% colors.forEach((color, idx) => { %>
             <a href="/product/<%= color.product %>" id="<%= color.id %>" class="btn-flat darken-3"
-                style="background-color: <%=color.name%>">
+                style="background-color: <%=color.name%>; border-width: 1px; border-style: solid;">
                 <% if (color.product === product.id) { %>
                 <i class="material-icons white-text">check</i>
                 <% }; %>
