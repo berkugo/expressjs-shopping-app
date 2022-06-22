@@ -23,7 +23,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "npx": "^10.2.2",
-    "sqlite3": "^5.0.2",
+    "sqlite3": "^5.0.3",
     "tedious": "^11.0.7",
     "translate-json-object": "^2.3.7",
     "yup": "^0.26.10"
